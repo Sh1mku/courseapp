@@ -8,6 +8,6 @@ urlpatterns = [
     path('list', views.kurslar),
     path('<kurs_adi>', views.details),
     path('kategori/<int:category_id>', views.getCoursesById),
-    path('kategori/<str:category_name>', views.getCoursesByCategory, name="coursers_by_category")
+    path('kategori/<str:category_name>', views.getCoursesByCategory, name="courses_by_category")
     
 ]
