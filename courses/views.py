@@ -10,6 +10,9 @@ data ={
 
 # Create your views here.
 
+def index(request):
+    return render(request, 'courses/index.html')
+
 def kurslar(request):
     list_items=""
     category_list = list(data.keys())
