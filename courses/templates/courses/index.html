@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>
-        kurslar anasayfasi
-    </h1>
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block page_title %}
+    Kurslar Sayfasi
+{% endblock page_title %}
+
+
+{% block content %}
+    <div class = "container mt-3">
+        <div class = "row">
+            <div class = "col-3">
+                <!--menu-->
+                {% include 'courses/partials/_categories.html' %}
+            </div>
+            <div class = "col-9">
+                <!--content-->
+            </div>
+    </div>
+{% endblock content %}
