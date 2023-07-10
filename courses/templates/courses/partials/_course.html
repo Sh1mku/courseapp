@@ -1,0 +1,21 @@
+{% load static%}
+<div class="card mb-3">
+    <div class="row g-0">
+       <div class="col-md-4">
+           <img class="img-fluid rounded-start" src="{% static 'courses/img/'|add:course.imageUrl %}" alt="course.title">
+       </div>
+       <div class="card-body">
+           <h5 class="card-title">{{course.title}}</h5>
+           <p class="card-text">{{course.description|truncatechars:15}}</p>
+           <span>
+            {% if course.isUpdated %}
+                <span class="badge bg-success">Guncellendi</span>
+            {% else %}
+            <span class="badge bg-warning">Guncelleme bekliyor.</span>
+            {% endif %}
+
+           </span>
+           <p>{{course.date}}</p>
+       </div>
+    </div>
+</div>
