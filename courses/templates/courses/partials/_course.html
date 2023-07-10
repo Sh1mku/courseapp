@@ -5,17 +5,12 @@
            <img class="img-fluid rounded-start" src="{% static 'courses/img/'|add:course.imageUrl %}" alt="course.title">
        </div>
        <div class="card-body">
-           <h5 class="card-title">{{course.title}}</h5>
+           <h5 class="card-title">
+                <a href="{% url 'course_details' course.slug%}">{{course.title}}</a>
+                
+            </h5>
            <p class="card-text">{{course.description|truncatechars:15}}</p>
-           <span>
-            {% if course.isUpdated %}
-                <span class="badge bg-success">Guncellendi</span>
-            {% else %}
-            <span class="badge bg-warning">Guncelleme bekliyor.</span>
-            {% endif %}
-
-           </span>
-           <p>{{course.date}}</p>
+           <p>{{course.date|date:'SHORT_DATE_FORMAT'}}</p>
        </div>
     </div>
 </div>
