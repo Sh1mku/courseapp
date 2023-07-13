@@ -16,12 +16,14 @@
                 <li class="nav-item">
                     <a href="/about" class="nav-link" >Hakkimizda</a>
                 </li>
-                <li class="nav-item">
-                    <a href="{% url 'create_course' %}" class="nav-link" >Admin Kurs Ekle</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{% url 'course_list' %}" class="nav-link" >Admin Kurslar</a>
-                </li>
+                {% if user.is_superuser %}
+                    <li class="nav-item">
+                        <a href="{% url 'create_course' %}" class="nav-link" >Admin Kurs Ekle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'course_list' %}" class="nav-link" >Admin Kurslar</a>
+                    </li>
+                {% endif %}
             </ul>
 
             <ul class="navbar-nav me-1" >
@@ -32,6 +34,9 @@
                     <li class="nav-item">
                         <a href="{% url 'user_logout' %}" class="nav-link" >Logout</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{% url 'change_password' %}" class="nav-link" >Change Password </a>
+                    </li> 
                 {% else %}
                     <li class="nav-item">
                         <a href="{% url 'user_login' %}" class="nav-link" >Login</a>
