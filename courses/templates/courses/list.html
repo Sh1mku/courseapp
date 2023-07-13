@@ -25,15 +25,16 @@
             </div>
             <div class = "col-9">
                 <!--content-->
-                {% if courses|length == 0 %}
+                {% if page_obj.object_list|length == 0 %}
                     <div class="alert alert-warning">Kurs Bulunamadi</div>
                 {% endif %}
-                {% for course in courses  %}
+                {% for course in page_obj.object_list  %}
 
                         {% include 'courses/partials/_course.html' %}
 
                 {% endfor %}
 
+                {% include 'courses/partials/_pagination.html' %}
                 
             </div>
     </div>
